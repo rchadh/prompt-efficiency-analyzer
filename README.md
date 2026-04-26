@@ -284,4 +284,4 @@ MIT
 
 ---
 
-*Built as part of an enterprise AI governance initiative — providing measurable quality gates for AI prompt libraries and artifact repositories.*
+*Built by Rahul Chadha as part of a broader exploration into enterprise AI governance*
