@@ -1,0 +1,11 @@
+GATEWAY_URL   = "https://lab1-gateway-imupjiqpny.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp"
+TOKEN_URL     = "https://my-domain-bm4qo1oz.auth.us-east-1.amazoncognito.com/oauth2/token"
+CLIENT_ID     = "1q50j5r649rrq4i3ccq7dvta1i"
+CLIENT_SECRET = "1j78lrfkmtchkjjbvplklkki2pfclge9cgdjlcajlaftr9i2v5im"
+SCOPE         = "lab1-gateway/genesis-gateway:invoke"
+MEMORY_ID = "lab2_memory-vUJ9Bt2NMA"
+
+
+REGION   = "us-east-1"
+MODEL_ID = "openai.gpt-oss-120b-1:0"
+

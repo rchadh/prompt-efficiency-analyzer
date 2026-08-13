@@ -1,0 +1,122 @@
+default_agent: lab3_weather_mcp
+agents:
+  lab1_weather_agent:
+    name: lab1_weather_agent
+    language: python
+    node_version: '20'
+    entrypoint: C:/Users/rahul/OneDrive/Documents/AI/AWS/AgentCore-Labs/agentcore-lab1/weather_agent.py
+    deployment_type: container
+    runtime_type: null
+    platform: linux/arm64
+    container_runtime: none
+    source_path: C:\Users\rahul\OneDrive\Documents\AI\AWS\AgentCore-Labs\agentcore-lab1
+    aws:
+      execution_role: arn:aws:iam::739623014099:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-610bc05429
+      execution_role_auto_create: false
+      account: '739623014099'
+      region: us-east-1
+      ecr_repository: 739623014099.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-lab1_weather_agent
+      ecr_auto_create: false
+      s3_path: null
+      s3_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+        network_mode_config: null
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+      lifecycle_configuration:
+        idle_runtime_session_timeout: null
+        max_lifetime: null
+    bedrock_agentcore:
+      agent_id: lab1_weather_agent-iTk1vpEveA
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:739623014099:runtime/lab1_weather_agent-iTk1vpEveA
+      agent_session_id: b531a39a-cb50-4a56-8f37-2bc4b497ecd6
+    codebuild:
+      project_name: bedrock-agentcore-lab1_weather_agent-builder
+      execution_role: arn:aws:iam::739623014099:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-610bc05429
+      source_bucket: bedrock-agentcore-codebuild-sources-739623014099-us-east-1
+    memory:
+      mode: NO_MEMORY
+      memory_id: null
+      memory_arn: null
+      memory_name: null
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+      was_created_by_toolkit: false
+    identity:
+      credential_providers: []
+      workload: null
+    aws_jwt:
+      enabled: false
+      audiences: []
+      signing_algorithm: ES384
+      issuer_url: null
+      duration_seconds: 300
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
+    api_key_env_var_name: null
+    api_key_credential_provider_name: null
+    is_generated_by_agentcore_create: false
+  lab3_weather_mcp:
+    name: lab3_weather_mcp
+    language: python
+    node_version: '20'
+    entrypoint: C:/Users/rahul/OneDrive/Documents/AI/AWS/AgentCore-Labs/agentcore-lab1/weather_mcp.py
+    deployment_type: container
+    runtime_type: null
+    platform: linux/arm64
+    container_runtime: none
+    source_path: C:\Users\rahul\OneDrive\Documents\AI\AWS\AgentCore-Labs\agentcore-lab1
+    aws:
+      execution_role: arn:aws:iam::739623014099:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-c9b0f98b40
+      execution_role_auto_create: false
+      account: '739623014099'
+      region: us-east-1
+      ecr_repository: 739623014099.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-lab3_weather_mcp
+      ecr_auto_create: false
+      s3_path: null
+      s3_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+        network_mode_config: null
+      protocol_configuration:
+        server_protocol: MCP
+      observability:
+        enabled: true
+      lifecycle_configuration:
+        idle_runtime_session_timeout: null
+        max_lifetime: null
+    bedrock_agentcore:
+      agent_id: lab3_weather_mcp-T1pVbD8XC5
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:739623014099:runtime/lab3_weather_mcp-T1pVbD8XC5
+      agent_session_id: null
+    codebuild:
+      project_name: bedrock-agentcore-lab3_weather_mcp-builder
+      execution_role: arn:aws:iam::739623014099:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-c9b0f98b40
+      source_bucket: bedrock-agentcore-codebuild-sources-739623014099-us-east-1
+    memory:
+      mode: STM_ONLY
+      memory_id: lab3_weather_mcp_mem-Xjz4JD2V0q
+      memory_arn: arn:aws:bedrock-agentcore:us-east-1:739623014099:memory/lab3_weather_mcp_mem-Xjz4JD2V0q
+      memory_name: lab3_weather_mcp_mem
+      event_expiry_days: 30
+      first_invoke_memory_check_done: true
+      was_created_by_toolkit: true
+    identity:
+      credential_providers: []
+      workload: null
+    aws_jwt:
+      enabled: false
+      audiences: []
+      signing_algorithm: ES384
+      issuer_url: null
+      duration_seconds: 300
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
+    api_key_env_var_name: null
+    api_key_credential_provider_name: null
+    is_generated_by_agentcore_create: false

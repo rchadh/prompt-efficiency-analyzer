@@ -1,0 +1,38 @@
+openapi: 3.0.3
+info:
+  title: Weather
+  version: "1.0"
+servers:
+  - url: https://api.openweathermap.org
+paths:
+  /data/2.5/weather:
+    get:
+      operationId: getWeather
+      summary: Get the current weather for a city
+      description: >-
+        Returns the current temperature, conditions and humidity for a city.
+        Use this whenever the user asks about weather anywhere.
+      parameters:
+        - name: q
+          in: query
+          required: true
+          description: >-
+            City name. You can add a country code, for example "Gurugram,IN"
+            or "Austin,US". Use the country code when a city name is common.
+          schema:
+            type: string
+        - name: units
+          in: query
+          required: false
+          description: >-
+            Use "metric" for Celsius or "imperial" for Fahrenheit.
+          schema:
+            type: string
+            default: metric
+      responses:
+        "200":
+          description: Current weather
+          content:
+            application/json:
+              schema:
+                type: object
