@@ -9,3 +9,12 @@ MEMORY_ID = "lab2_memory-vUJ9Bt2NMA"
 REGION   = "us-east-1"
 MODEL_ID = "openai.gpt-oss-120b-1:0"
 
+import boto3, json
+
+REGION = "us-east-1"          # change to your region
+GATEWAY_ID = "your-gateway-id"  # from your Terraform output
+
+ctrl = boto3.client("bedrock-agentcore-control", region_name=REGION)
+
+resp = ctrl.get_gateway(gatewayIdentifier=GATEWAY_ID)
+print(json.dumps(resp, indent=2, default=str))
