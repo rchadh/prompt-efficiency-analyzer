@@ -18,3 +18,22 @@ ctrl = boto3.client("bedrock-agentcore-control", region_name=REGION)
 
 resp = ctrl.get_gateway(gatewayIdentifier=GATEWAY_ID)
 print(json.dumps(resp, indent=2, default=str))
+
+-----------------------------------------------
+
+# step2c_connect_none.py
+import asyncio
+from mcp import ClientSession
+from mcp.client.streamable_http import streamablehttp_client
+
+GATEWAY_URL = "https://<your-gateway-id>.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp"
+
+async def main():
+    async with streamablehttp_client(GATEWAY_URL) as (read, write, _):
+        async with ClientSession(read, write) as session:
+            await session.initialize()
+            tools = await session.list_tools()
+            for t in tools.tools:
+                print(t.name)
+
+asyncio.run(main())
