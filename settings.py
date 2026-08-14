@@ -37,3 +37,11 @@ async def main():
                 print(t.name)
 
 asyncio.run(main())
+
+
+-----------------------
+
+import httpx
+r = httpx.get("https://<your-gateway-id>.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp",
+              verify=r"C:\certs\combined-ca.pem")
+print(r.status_code)
