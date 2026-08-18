@@ -94,4 +94,11 @@ if __name__ == "__main__":
     if "--chat" in sys.argv:
         main()             # local interactive testing
     else:
-        app.run()          # default — this is what Runtime needs
+
+
+
+POST https://bedrock-agentcore.{region}.amazonaws.com/runtimes/{URL-ENCODED-ARN}/invocations?qualifier=DEFAULT
+https://bedrock-agentcore.us-east-1.amazonaws.com/runtimes/arn%3Aaws%3Abedrock-agentcore%3Aus-east-1%3A123456789012%3Aruntime%2Flab1_weather_agent-XyZ123/invocations?qualifier=DEFAULT
+import urllib.parse
+encoded = urllib.parse.quote(arn, safe='')        
+app.run()          # default — this is what Runtime needs
