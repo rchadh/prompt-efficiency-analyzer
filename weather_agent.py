@@ -118,3 +118,26 @@ app.run()          # default — this is what Runtime needs
     }
   ]
 }
+
+
+---------------
+
+import settings
+import boto3
+import json
+
+dp = boto3.client("bedrock-agentcore", region_name=settings.REGION)
+
+sessions = dp.list_sessions(memoryId=settings.MEMORY_ID, actorId="rahul")
+for s in sessions.get("sessionSummaries", []):
+    sid = s["sessionId"]
+    print(f"\n=== SESSION {sid} ===")
+    events = dp.list_events(
+        memoryId=settings.MEMORY_ID,
+        actorId="rahul",
+        sessionId=sid,
+        includePayloads=True,
+        maxResults=100,
+    )
+    for e in events.get("events", []):
+        print(json.dumps(e, indent=2, default=str))
