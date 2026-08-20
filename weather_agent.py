@@ -102,3 +102,19 @@ https://bedrock-agentcore.us-east-1.amazonaws.com/runtimes/arn%3Aaws%3Abedrock-a
 import urllib.parse
 encoded = urllib.parse.quote(arn, safe='')        
 app.run()          # default — this is what Runtime needs
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:CreateEvent",
+        "bedrock-agentcore:ListEvents",
+        "bedrock-agentcore:GetEvent",
+        "bedrock-agentcore:ListSessions",
+        "bedrock-agentcore:GetMemory"
+      ],
+      "Resource": "arn:aws:bedrock-agentcore:us-east-1:YOUR_ACCOUNT_NUMBER:memory/*"
+    }
+  ]
+}
