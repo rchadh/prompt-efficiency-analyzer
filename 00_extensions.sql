@@ -12,3 +12,11 @@ python -c "import yaml; s=yaml.safe_load(open('specs/client-api.yaml', encoding=
 
 pip install openapi-spec-validator
 openapi-spec-validator specs\client-api.yaml
+{
+  "servers": {
+    "api-knowledge": {
+      "type": "http",
+      "url": "http://127.0.0.1:8000/mcp"
+    }
+  }
+}
